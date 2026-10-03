@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Record Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">SR</span><div><b>Student Record</b><small>Management System</small></div></div>
+  <nav><a href="#dashboard">Dashboard</a><a href="#students">Students</a><a href="#about">About</a></nav>
+</header>
+<main>
+<section id="dashboard" class="hero">
+  <div><p class="eyebrow">INSTITUTIONAL TRAINING PROJECT</p><h1>Student Record<br><span>Management System</span></h1>
+  <p class="lead">A simple, organized interface for storing, viewing, updating and managing student information.</p>
+  <a class="btn" href="#students">View Student Records →</a></div>
+  <div class="hero-card"><div class="circle">SRMS</div><h3>Python + MySQL</h3><p>Project-based training application</p>
+  <div class="mini-grid"><div><b>5</b><small>Training Days</small></div><div><b>4</b><small>CRUD Actions</small></div></div></div>
+</section>
+<section class="stats"><div><span>👩‍🎓</span><b id="studentCount">5</b><small>Total Students</small></div><div><span>🏫</span><b>3</b><small>Departments</small></div><div><span>💾</span><b>MySQL</b><small>Database</small></div><div><span>🐍</span><b>Python</b><small>Application Logic</small></div></section>
+<section id="students" class="panel"><div class="section-head"><div><p class="eyebrow">RECORDS</p><h2>Student Records</h2></div><button class="btn" onclick="openModal()">+ Add Student</button></div>
+<div class="toolbar"><input id="search" placeholder="Search by name, register number or department..." oninput="render()"><select id="dept" onchange="render()"><option value="">All Departments</option><option>B.Sc AIML</option><option>B.Sc Computer Science</option><option>BCA</option></select></div>
+<div class="table-wrap"><table><thead><tr><th>Register No.</th><th>Student Name</th><th>Department</th><th>Year</th><th>Contact</th><th>Action</th></tr></thead><tbody id="tbody"></tbody></table></div></section>
+<section id="about" class="about"><div><p class="eyebrow">PROJECT OVERVIEW</p><h2>Built from the training report</h2><p>This project reflects the training work documented for Gateway Software Solutions, Coimbatore. The report describes a Student Record Management System using Python for application logic and MySQL for structured student data.</p></div>
+<div class="tech"><div><b>Python</b><span>Functions · Input · Validation</span></div><div><b>MySQL / SQL</b><span>INSERT · SELECT · UPDATE · DELETE</span></div><div><b>Testing</b><span>Debugging · Error correction</span></div></div></section>
+<section class="workflow"><h2>System Workflow</h2><div class="steps"><div><b>01</b><span>Enter student details</span></div><div><b>02</b><span>Validate information</span></div><div><b>03</b><span>Store in database</span></div><div><b>04</b><span>View / update / delete</span></div></div></section>
+</main>
+<footer><b>Sriharani M</b> · 25UGAM053 · B.Sc Artificial Intelligence and Machine Learning · Gateway Software Solutions</footer>
+<div id="modal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><h2>Add Student</h2><form onsubmit="addStudent(event)"><input id="reg" required placeholder="Register Number"><input id="name" required placeholder="Student Name"><select id="d"><option>B.Sc AIML</option><option>B.Sc Computer Science</option><option>BCA</option></select><select id="year"><option>1st Year</option><option>2nd Year</option><option>3rd Year</option></select><input id="phone" placeholder="Contact Number"><button class="btn">Save Record</button></form></div></div>
+<script src="script.js"></script>
+</body>
+</html>
